@@ -66,6 +66,7 @@ namespace Socket_Pio_Server
             this.Btn_CSTContain.TabIndex = 17;
             this.Btn_CSTContain.Text = "CASSETTE\r\nCONTAIN\r\n";
             this.Btn_CSTContain.UseVisualStyleBackColor = true;
+            this.Btn_CSTContain.Click += new System.EventHandler(this.Btn_CSTContain_Click);
             // 
             // timer1
             // 
@@ -96,7 +97,7 @@ namespace Socket_Pio_Server
             // oNOFFToolStripMenuItem
             // 
             this.oNOFFToolStripMenuItem.Name = "oNOFFToolStripMenuItem";
-            this.oNOFFToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.oNOFFToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.oNOFFToolStripMenuItem.Text = "ON/OFF";
             this.oNOFFToolStripMenuItem.Click += new System.EventHandler(this.oNOFFToolStripMenuItem_Click_1);
             // 
