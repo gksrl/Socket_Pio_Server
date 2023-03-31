@@ -30,10 +30,10 @@ namespace Socket_Pio_Server
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Btn_Clear = new System.Windows.Forms.Button();
-            this.Btn_CSTContain = new System.Windows.Forms.Button();
+            this.Btn_STKNOERROR = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.clientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,7 +41,6 @@ namespace Socket_Pio_Server
             this.STK_GRID = new System.Windows.Forms.DataGridView();
             this.IDX_GRID = new System.Windows.Forms.DataGridView();
             this.ClientBox = new System.Windows.Forms.ListBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.STK_GRID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IDX_GRID)).BeginInit();
@@ -56,17 +55,18 @@ namespace Socket_Pio_Server
             this.Btn_Clear.TabIndex = 18;
             this.Btn_Clear.Text = "CLEAR";
             this.Btn_Clear.UseVisualStyleBackColor = true;
+            this.Btn_Clear.Click += new System.EventHandler(this.Btn_Clear_Click);
             // 
-            // Btn_CSTContain
+            // Btn_STKNOERROR
             // 
-            this.Btn_CSTContain.Location = new System.Drawing.Point(577, 41);
-            this.Btn_CSTContain.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Btn_CSTContain.Name = "Btn_CSTContain";
-            this.Btn_CSTContain.Size = new System.Drawing.Size(152, 74);
-            this.Btn_CSTContain.TabIndex = 17;
-            this.Btn_CSTContain.Text = "CASSETTE\r\nCONTAIN\r\n";
-            this.Btn_CSTContain.UseVisualStyleBackColor = true;
-            this.Btn_CSTContain.Click += new System.EventHandler(this.Btn_CSTContain_Click);
+            this.Btn_STKNOERROR.Location = new System.Drawing.Point(577, 41);
+            this.Btn_STKNOERROR.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Btn_STKNOERROR.Name = "Btn_STKNOERROR";
+            this.Btn_STKNOERROR.Size = new System.Drawing.Size(152, 74);
+            this.Btn_STKNOERROR.TabIndex = 17;
+            this.Btn_STKNOERROR.Text = "STK\r\nABNORMAL/ERROR\r\n";
+            this.Btn_STKNOERROR.UseVisualStyleBackColor = true;
+            this.Btn_STKNOERROR.Click += new System.EventHandler(this.Btn_CSTContain_Click);
             // 
             // timer1
             // 
@@ -110,16 +110,16 @@ namespace Socket_Pio_Server
             this.STK_GRID.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.STK_GRID.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.STK_GRID.ColumnHeadersVisible = false;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.STK_GRID.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.STK_GRID.DefaultCellStyle = dataGridViewCellStyle7;
             this.STK_GRID.Enabled = false;
-            this.STK_GRID.Location = new System.Drawing.Point(281, 37);
+            this.STK_GRID.Location = new System.Drawing.Point(0, 41);
             this.STK_GRID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.STK_GRID.Name = "STK_GRID";
             this.STK_GRID.RowHeadersVisible = false;
@@ -138,17 +138,17 @@ namespace Socket_Pio_Server
             this.IDX_GRID.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.IDX_GRID.ColumnHeadersVisible = false;
             this.IDX_GRID.Cursor = System.Windows.Forms.Cursors.Arrow;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.IDX_GRID.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.IDX_GRID.DefaultCellStyle = dataGridViewCellStyle8;
             this.IDX_GRID.Enabled = false;
             this.IDX_GRID.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.IDX_GRID.Location = new System.Drawing.Point(0, 37);
+            this.IDX_GRID.Location = new System.Drawing.Point(280, 41);
             this.IDX_GRID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.IDX_GRID.MultiSelect = false;
             this.IDX_GRID.Name = "IDX_GRID";
@@ -167,28 +167,19 @@ namespace Socket_Pio_Server
             this.ClientBox.Size = new System.Drawing.Size(269, 508);
             this.ClientBox.TabIndex = 20;
             // 
-            // textBox1
-            // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(74, 6);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 21);
-            this.textBox1.TabIndex = 23;
-            // 
             // SERVER
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1022, 562);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.Btn_Clear);
-            this.Controls.Add(this.Btn_CSTContain);
+            this.Controls.Add(this.Btn_STKNOERROR);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.STK_GRID);
             this.Controls.Add(this.IDX_GRID);
             this.Controls.Add(this.ClientBox);
             this.Name = "SERVER";
-            this.Text = "SERVER";
+            this.Text = "STOCKER Server";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.STK_GRID)).EndInit();
@@ -201,15 +192,14 @@ namespace Socket_Pio_Server
         #endregion
 
         private System.Windows.Forms.Button Btn_Clear;
-        private System.Windows.Forms.Button Btn_CSTContain;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button Btn_STKNOERROR;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem clientToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem oNOFFToolStripMenuItem;
         private System.Windows.Forms.DataGridView STK_GRID;
         private System.Windows.Forms.DataGridView IDX_GRID;
         private System.Windows.Forms.ListBox ClientBox;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
